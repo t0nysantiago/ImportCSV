@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "binary"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model MonthlyElectorate {
+  id               Int    @id @default(autoincrement())
+  year             Int
+  marital_status   String
+  age_range        String
+  gender           String
+  education_level  String
+  month            Int
+  city             String
+  country          String
+  region           String
+  situation        String
+  uf               String
+  zone             Int
+  elector_quantity Int
+  load_date        String
+}
